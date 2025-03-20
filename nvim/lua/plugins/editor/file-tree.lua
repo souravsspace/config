@@ -52,7 +52,7 @@ return {
         root_folder_label = ':t',
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,
         git_ignored = false,
       },
     },
