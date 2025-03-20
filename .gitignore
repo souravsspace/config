@@ -1,0 +1,10 @@
+configstore
+simple-update-notifier
+raycast
+zed
+zshrc/env/*
+zshrc/env
+github-copilot
+ssh/*
+!ssh/config
+zshrc/.zsh_history

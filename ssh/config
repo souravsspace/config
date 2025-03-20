@@ -1,0 +1,17 @@
+### SSH (github & gitlab) ###
+
+# GitHub configuration 
+Host github.com
+  HostName ssh.github.com
+  User git
+  Port 443
+  IdentityFile ~/.config/ssh/id_rsa_github
+  IdentitiesOnly yes
+
+# GitLab configuration 
+Host gitlab.com
+  HostName gitlab.com
+  User git
+  Port 22
+  IdentityFile ~/.config/ssh/id_rsa_gitlab
+  IdentitiesOnly yes
