@@ -210,7 +210,6 @@ return {
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
-        --
 
         lua_ls = {
           -- cmd = { ... },
@@ -223,6 +222,28 @@ return {
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
+            },
+          },
+        },
+
+        emmet_ls = {
+          filetypes = {
+            'html',
+            'typescriptreact',
+            'javascriptreact',
+            'css',
+            'sass',
+            'scss',
+            'less',
+            'svelte',
+            'vue',
+            'astro',
+          },
+          init_options = {
+            html = {
+              options = {
+                ['bem.enabled'] = true,
+              },
             },
           },
         },
@@ -261,6 +282,7 @@ return {
         'stylua',
         'tailwindcss-language-server',
         'vtsls',
+        'emmet-ls',
       })
       require('mason-tool-installer').setup {
         ensure_installed = ensure_installed,

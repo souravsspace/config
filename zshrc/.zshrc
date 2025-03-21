@@ -96,9 +96,9 @@ if [ -d "$HOME/.config/tmux" ]; then
 fi
 
 # Auto-start tmux
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach -t workflows || tmux new -s default
-fi
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#   tmux attach -t workflows || tmux new -s default
+# fi
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/sourav/.docker/completions $fpath)
