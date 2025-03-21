@@ -1,14 +1,17 @@
 ### other ###
 copy-on-select = clipboard
-font-size = 15
 theme = "GitHub Dark"
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 adjust-cell-height = 35%
 
+### Font ###
+font-size = 15
+font-family = "JetBrains Mono"
+
 ### Background ###
-background-opacity = 0.98
-background-blur-radius = 40
+background-opacity = 0.9
+background-blur-radius = 20
 
 ### mouse ###
 mouse-hide-while-typing = true
