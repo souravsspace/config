@@ -226,27 +226,27 @@ return {
           },
         },
 
-        emmet_ls = {
-          filetypes = {
-            'html',
-            'typescriptreact',
-            'javascriptreact',
-            'css',
-            'sass',
-            'scss',
-            'less',
-            'svelte',
-            'vue',
-            'astro',
-          },
-          init_options = {
-            html = {
-              options = {
-                ['bem.enabled'] = true,
-              },
-            },
-          },
-        },
+        -- emmet_ls = {
+        --   filetypes = {
+        --     'html',
+        --     'typescriptreact',
+        --     'javascriptreact',
+        --     'css',
+        --     'sass',
+        --     'scss',
+        --     'less',
+        --     'svelte',
+        --     'vue',
+        --     'astro',
+        --   },
+        --   init_options = {
+        --     html = {
+        --       options = {
+        --         ['bem.enabled'] = true,
+        --       },
+        --     },
+        --   },
+        -- },
       }
 
       -- Ensure the servers and tools above are installed
@@ -282,7 +282,7 @@ return {
         'stylua',
         'tailwindcss-language-server',
         'vtsls',
-        'emmet-ls',
+        -- 'emmet-ls',
       })
       require('mason-tool-installer').setup {
         ensure_installed = ensure_installed,

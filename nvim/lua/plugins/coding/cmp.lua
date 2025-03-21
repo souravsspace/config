@@ -22,7 +22,29 @@ return {
           {
             'rafamadriz/friendly-snippets',
             config = function()
-              require('luasnip.loaders.from_vscode').lazy_load()
+              -- require('luasnip.loaders.from_vscode').lazy_load()
+
+              -- -- JavaScript setup
+              -- require('luasnip').filetype_extend(
+              --   'javascript',
+              --   { 'javascriptreact' }
+              -- )
+              -- -- TypeScript setup
+              -- require('luasnip').filetype_extend(
+              --   'typescript',
+              --   { 'typescriptreact' }
+              -- )
+              -- -- Optional reverse extension for JS React & TS React
+              -- require('luasnip').filetype_extend('javascript', { 'html' })
+              -- require('luasnip').filetype_extend('typescript', { 'html' })
+
+              -- will exclude all javascript & typescript snippets
+              require('luasnip.loaders.from_vscode').load {
+                exclude = { 'javascript' },
+              }
+              require('luasnip.loaders.from_vscode').load {
+                exclude = { 'typescript' },
+              }
             end,
           },
         },
