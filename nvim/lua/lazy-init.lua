@@ -45,6 +45,7 @@ require('lazy').setup({
     { import = 'plugins.linting.core' },
     { import = 'plugins.test.core' },
     { import = 'plugins.ui.colorscheme' },
+    { import = 'plugins.ui.alpha' },
     { import = 'plugins.ui.dressing' },
     { import = 'plugins.ui.treesitter-context' },
     { import = 'plugins.util.mini-hipatterns' },
