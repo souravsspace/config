@@ -67,6 +67,7 @@ return {
     'ibhagwan/fzf-lua',
     dependencies = { 'echasnovski/mini.icons' },
     opts = {
+      silent = true,
       files = {
         fd_opts = '--color=never --type f --hidden --no-ignore --follow --exclude **/.git --exclude **/node_modules --exclude **/next',
       },
@@ -146,14 +147,15 @@ return {
   {
     'neovim/nvim-lspconfig',
     opts = function()
+      -- 3. Fix command syntax using Lua table parameters
       -- stylua: ignore
-      vim.keymap.set('n', 'gd', '<cmd>FzfLua lsp_definitions     jump_to_single_result=true ignore_current_line=true<cr>', { desc = "Goto Definition" })
+      vim.keymap.set('n', 'gd', function() require('fzf-lua').lsp_definitions { jump1 = true, ignore_current_line = true } end, { desc = "Goto Definition" })
       -- stylua: ignore
-      vim.keymap.set('n', 'gr', '<cmd>FzfLua lsp_references      jump_to_single_result=true ignore_current_line=true<cr>', { desc = "References", nowait = true })
+      vim.keymap.set('n', 'gr', function() require('fzf-lua').lsp_references { jump1 = true, ignore_current_line = true } end, { desc = "References", nowait = true })
       -- stylua: ignore
-      vim.keymap.set('n', 'gI', '<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>', { desc = "Goto Implementation" })
+      vim.keymap.set('n', 'gI', function() require('fzf-lua').lsp_implementations { jump1 = true, ignore_current_line = true } end, { desc = "Goto Implementation" })
       -- stylua: ignore
-      vim.keymap.set('n', 'gy', '<cmd>FzfLua lsp_typedefs        jump_to_single_result=true ignore_current_line=true<cr>', { desc = "Goto Type Definitions" })
+      vim.keymap.set('n', 'gy', function() require('fzf-lua').lsp_typedefs { jump1 = true, ignore_current_line = true } end, { desc = "Goto Type Definitions" })
     end,
   },
 }
