@@ -69,10 +69,10 @@ return {
     opts = {
       silent = true,
       files = {
-        fd_opts = '--color=never --type f --hidden --no-ignore --follow --exclude **/.git --exclude **/node_modules --exclude **/next',
+        fd_opts = '--color=never --type f --hidden --no-ignore --follow --exclude **/.git --exclude **/node_modules --exclude **/.vinxi --exclude **/.output --exclude **/.nx --exclude **/.next',
       },
       grep = {
-        rg_opts = "--column --line-number --hidden --no-ignore --glob '!.git/*' --glob '!node_modules/*' --glob '!.next/*'",
+        rg_opts = "--column --line-number --hidden --no-ignore --glob '!**/.git/*' --glob '!**/node_modules/*' --glob '!**/.vinxi/*' --glob '!**/.output/*' --glob '!**/.nx' --glob '!**/.next/*'",
       },
     },
     keys = {
