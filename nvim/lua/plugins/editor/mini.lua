@@ -12,17 +12,6 @@ return {
     end,
 
     config = function()
-      vim.cmd [[
-        highlight! MiniIconsBlue guifg=#569CD6
-        highlight! MiniIconsCyan guifg=#4EC9B0
-        highlight! MiniIconsRed guifg=#D16969
-        highlight! MiniIconsPurple guifg=#C586C0
-        highlight! MiniIconsYellow guifg=#DCDCAA
-        highlight! MiniIconsGreen guifg=#6A9955
-        highlight! MiniIconsAzure guifg=#4DC9B0
-        highlight! MiniIconsOrange guifg=#CE9178
-      ]]
-
       require('mini.icons').setup {
         style = 'glyph',
         directory = {
