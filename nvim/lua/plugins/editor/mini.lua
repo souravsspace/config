@@ -1,7 +1,62 @@
 return {
   {
     'echasnovski/mini.nvim',
+    specs = {
+      { 'nvim-tree/nvim-web-devicons', enabled = false, optional = true },
+    },
+    init = function()
+      package.preload['nvim-web-devicons'] = function()
+        require('mini.icons').mock_nvim_web_devicons()
+        return package.loaded['nvim-web-devicons']
+      end
+    end,
+
     config = function()
+      vim.cmd [[
+        highlight! MiniIconsBlue guifg=#569CD6
+        highlight! MiniIconsCyan guifg=#4EC9B0
+        highlight! MiniIconsRed guifg=#D16969
+        highlight! MiniIconsPurple guifg=#C586C0
+        highlight! MiniIconsYellow guifg=#DCDCAA
+        highlight! MiniIconsGreen guifg=#6A9955
+        highlight! MiniIconsAzure guifg=#4DC9B0
+        highlight! MiniIconsOrange guifg=#CE9178
+      ]]
+
+      require('mini.icons').setup {
+        style = 'glyph',
+        directory = {
+          [''] = { glyph = '', hl = 'MiniIconsBlue' }, -- Default folder
+          ['src'] = { glyph = '󰙅', hl = 'MiniIconsCyan' },
+          ['node_modules'] = { glyph = '', hl = 'MiniIconsRed' },
+          ['.github'] = { glyph = '', hl = 'MiniIconsPurple' },
+        },
+        file = {
+          -- Your existing file icons
+          ['.eslintrc.js'] = { glyph = '󰱺', hl = 'MiniIconsYellow' },
+          ['.node-version'] = { glyph = '', hl = 'MiniIconsGreen' },
+          ['.prettierrc'] = { glyph = '', hl = 'MiniIconsPurple' },
+          ['.yarnrc.yml'] = { glyph = '', hl = 'MiniIconsBlue' },
+          ['eslint.config.js'] = { glyph = '󰱺', hl = 'MiniIconsYellow' },
+          ['package.json'] = { glyph = '', hl = 'MiniIconsGreen' },
+          ['tsconfig.json'] = { glyph = '', hl = 'MiniIconsAzure' },
+          ['tsconfig.build.json'] = { glyph = '', hl = 'MiniIconsAzure' },
+          ['yarn.lock'] = { glyph = '', hl = 'MiniIconsBlue' },
+          ['.env'] = { glyph = '󰟋', hl = 'MiniIconsOrange' },
+          ['.env.local'] = { glyph = '󰟋', hl = 'MiniIconsYellow' },
+          ['.env.example'] = { glyph = '󰟋', hl = 'MiniIconsBlue' },
+        },
+        extension = {},
+        filetype = {},
+        lsp = {},
+        os = {},
+
+        -- Control which extensions will be considered during "file" resolution
+        use_file_extension = function(ext, file)
+          return true
+        end,
+      }
+
       require('mini.ai').setup { n_lines = 500 }
 
       require('mini.surround').setup {
