@@ -14,6 +14,7 @@ return {
     keys = {
       { '<leader>e', '<cmd>NvimTreeToggle<cr>', desc = 'Open Explorer' },
     },
+    
     opts = {
       reload_on_bufenter = true,
       hijack_cursor = true,

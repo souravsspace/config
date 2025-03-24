@@ -32,6 +32,10 @@ return {
       behaviour = {
         auto_suggestions = true,
       },
+      anthropic = {
+        api_key = vim.env.ANTHROPIC_API_KEY, 
+        model = "claude-3-7-sonnet-20250219",
+      },
     },
     build = 'make',
     dependencies = {
@@ -57,6 +61,10 @@ return {
             prompt_for_file_name = false,
             drag_and_drop = {
               insert_mode = true,
+            },
+            -- web search engine provider
+            web_search_engine = {
+              provider = 'google', -- tavily, serpapi, searchapi, google or kagi
             },
             -- required for Windows users
             use_absolute_path = true,
