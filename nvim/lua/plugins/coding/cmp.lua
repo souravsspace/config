@@ -88,6 +88,7 @@ return {
           ['<S-Tab>'] = cmp.mapping.select_prev_item(),
           ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
           ['<A-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+          
         },
 
         -- Add formatting configuration

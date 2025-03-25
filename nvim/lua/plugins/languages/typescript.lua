@@ -14,6 +14,7 @@ return {
           enabled = false,
         },
         vtsls = {
+          enabled = true,
           -- explicitly add default filetypes, so that we can extend
           -- them in related extras
           filetypes = {
@@ -47,9 +48,10 @@ return {
                 parameterNames = { enabled = 'literals' },
                 parameterTypes = { enabled = true },
                 propertyDeclarationTypes = { enabled = true },
-                variableTypes = { enabled = false },
+                variableTypes = { enabled = true },
               },
             },
+            
           },
           keys = {
             {
