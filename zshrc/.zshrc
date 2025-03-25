@@ -104,4 +104,18 @@ fi
 fpath=(/Users/sourav/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
+
 # End of Docker CLI completions
+eval "$(rbenv init - zsh)"
+
+# Add Ruby to PATH
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/sourav/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="$HOME/.cargo/bin:$PATH"
