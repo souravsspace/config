@@ -33,8 +33,8 @@ return {
         auto_suggestions = true,
       },
       anthropic = {
-        api_key = vim.env.ANTHROPIC_API_KEY, 
-        model = "claude-3-7-sonnet-20250219",
+        api_key = vim.env.ANTHROPIC_API_KEY,
+        model = 'claude-3-7-sonnet-20250219',
       },
       web_search_engine = {
         provider = 'google', -- Set Google as the web search provider

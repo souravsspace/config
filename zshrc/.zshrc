@@ -48,6 +48,13 @@ alias ll="ls -la"
 alias la="ls -lAh"
 alias l="ls -lh"
 
+# Alias to open Visual Studio Code
+alias vscode="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+
+# Alias to open Cursor 
+alias cursor="/Applications/Cursor.app/Contents/MacOS/Cursor"
+
+
 # Export and alias of ssh-config
 export SSH_DIR="$HOME/.config/ssh"
 alias ssh="ssh -F $SSH_DIR/config"
