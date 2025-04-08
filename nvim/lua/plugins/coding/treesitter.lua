@@ -21,6 +21,8 @@ return {
         'ninja',
         'rst',
         'tsx',
+        'rust',
+        'ron',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

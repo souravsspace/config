@@ -202,19 +202,20 @@ return {
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        rust_analyzer = {
-          settings = {
-            ['rust-analyzer'] = {
-              checkOnSave = {
-                command = 'clippy',
-              },
-              completion = {
-                autoimport = true,
-                autoself = true,
-              },
-            },
-          },
-        },
+        -- rust_analyzer = {
+        --   settings = {
+        --     ['rust-analyzer'] = {
+        --       enabled = false,
+        --       checkOnSave = {
+        --         command = 'clippy',
+        --       },
+        --       completion = {
+        --         autoimport = true,
+        --         autoself = true,
+        --       },
+        --     },
+        --   },
+        -- },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -280,6 +281,10 @@ return {
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
+            -- Skip rust_analyzer setup as it's handled by rustaceanvim
+            if server_name == "rust_analyzer" then
+              return
+            end
             local server = servers[server_name] or {}
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
