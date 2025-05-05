@@ -23,6 +23,13 @@ return {
         'tsx',
         'rust',
         'ron',
+        'sql',
+        'git_config',
+        'gitcommit',
+        'git_rebase',
+        'gitignore',
+        'gitattributes',
+        'json5',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

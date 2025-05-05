@@ -52,6 +52,7 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'petertriho/cmp-git',
     },
     config = function()
       -- See `:help cmp`
@@ -71,8 +72,9 @@ return {
           { name = 'luasnip' },
           { name = 'buffer' },
           { name = 'path' },
+          { name = 'git' },
         },
-        completion = { 
+        completion = {
           completeopt = 'menu,menuone,noinsert',
         },
 
@@ -88,20 +90,20 @@ return {
           ['<S-Tab>'] = cmp.mapping.select_prev_item(),
           ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
           ['<A-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-          
         },
 
         -- Add formatting configuration
         formatting = {
           format = function(entry, vim_item)
             vim_item.menu = ({
-              nvim_lsp = "[LSP]",
-              luasnip = "[Snippet]",
-              buffer = "[Buffer]",
-              path = "[Path]",
+              nvim_lsp = '[LSP]',
+              luasnip = '[Snippet]',
+              buffer = '[Buffer]',
+              path = '[Path]',
+              git = '[Git]',
             })[entry.source.name]
             return vim_item
-          end
+          end,
         },
       }
     end,
