@@ -30,6 +30,7 @@ return {
         'gitignore',
         'gitattributes',
         'json5',
+        'nix',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
